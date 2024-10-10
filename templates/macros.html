@@ -1,0 +1,52 @@
+{% macro post_max(page) %}
+<div style="text-align: center;">
+  <h1 style="text-align: center;"><a href="{{ page.permalink }}">{{ page.title }}</a></h1>
+  <p style="text-align: center;">{{ page.description }}</p>
+  <dl class="dl-horizontal" style="text-align: center;">
+  </dl>
+  <p>
+    <a href="{{ page.permalink }}" class="btn btn-info" role="button">{{ config.extra.label_read_more }}</a>
+  </p>
+  <hr class="soften">
+  <p></p>
+</div>
+{% endmacro %}
+
+
+
+{% macro post_min(page) %}
+<a href="{{ page.permalink }}">{{ page.date }} | {{ page.title }}</a>
+{% endmacro post_min %}
+
+
+{% macro paginator(ref, extra) %}
+<!-- <div class="pagination pagination-centered">
+  <ul>
+    {% if ref.current_index != 1 %}
+      <li><a href="{{ ref.first }}">&larrb;</a></li>
+    {% else %}
+      <li class="disabled"><a href="{{ ref.first }}">&larrb;</a></li>
+    {% endif %}
+
+    {% if ref.next %}
+      <li><a href="{{ ref.previous }}">&larr;</a></li>
+    {% else %}
+      <li class="disabled"><a href="#">&larr;</a></li>
+    {% endif %}
+
+    <li class="disabled"><a href="#">{{ ref.current_index }}/{{ ref.number_pagers }}</a></li>
+    
+    {% if ref.next %}
+      <li><a href="{{ ref.next }}">&rarr;</a></li>
+    {% else %}
+      <li class="disabled"><a href="#">&rarr;</a></li>
+    {% endif %}
+
+    {% if ref.current_index != ref.number_pagers %}
+      <li><a href="{{ ref.last }}">&rarrb;</a></li>
+    {% else %}
+      <li class="disabled"><a href="{{ ref.last }}">&rarrb;</a></li>
+    {% endif %}
+  </ul>
+</div> -->
+{% endmacro paginator %}
